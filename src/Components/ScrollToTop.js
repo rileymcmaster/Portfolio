@@ -7,7 +7,7 @@ const ScrollToTop = ({ history }) => {
       window.scrollTo(0, 0);
     });
     return () => handleScroll();
-  }, []);
+  }, [history]);
   return null;
 };
 

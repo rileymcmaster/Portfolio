@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function useMediaQuery() {
+  // Set the BREAK POINT
+  const breakPoint = "(max-width: 700px)";
+
   const [matches, setMatches] = useState(false);
 
   useEffect(() => {
-    const media = window.matchMedia("(max-width: 700px)");
+    const media = window.matchMedia(breakPoint);
     if (media.matches !== matches) {
       setMatches(media.matches);
     }

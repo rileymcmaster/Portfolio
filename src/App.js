@@ -6,7 +6,6 @@ import Header from "./Components/Header";
 import TitlePage from "./Components/TitlePage";
 import Projects from "./Components/Projects/index";
 import About from "./Components/About";
-import Art from "./Components/Art";
 import Contact from "./Components/Contact";
 import FoodFeed from "./Components/FoodFeed";
 import Cyborg from "./Components/Cyborg";
@@ -44,7 +43,6 @@ const App = () => {
             <TitlePage offset={offset} TitlePageRef={TitlePageRef} />
             <About offset={offset} AboutRef={AboutRef} />
             <Projects ProjectsRef={ProjectsRef} />
-            {/* <Art ArtRef={ArtRef} /> */}
             <Contact ContactRef={ContactRef} />
           </Route>
           <Route exact path="/project/foodfeed">

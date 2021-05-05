@@ -32,7 +32,7 @@ const Header = ({
         Art
       </button> */}
       <button
-        className={mediaQuery && "icon"}
+        className={mediaQuery ? "icon" : ""}
         type="button"
         onClick={() => jumpToSection(ContactRef)}
       >
