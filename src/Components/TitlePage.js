@@ -21,7 +21,8 @@ const TitlePage = ({ TitlePageRef, offset }) => {
       <SkillsCard style={{ transform: `translateY(${offset * 1.2}px)` }}>
         <h2>Full-stack Web Developer</h2>
         <p>
-          React, Redux, JavaScript, Node, Express, Mongoose, MongoDB, CSS, HTML5
+          React, Redux, JavaScript, Node, Express, Mongoose, MongoDB, CSS &
+          HTML5
         </p>
       </SkillsCard>
     </Container>
@@ -66,6 +67,7 @@ const SkillsCard = styled.div`
   z-index: 0;
   color: var(--primary-color);
   position: absolute;
+  padding-right: 40px;
   margin-left: 5%;
   bottom: 20%;
   left: 0;

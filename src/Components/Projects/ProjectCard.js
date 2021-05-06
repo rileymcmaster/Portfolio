@@ -70,7 +70,7 @@ const EachProject = styled.div`
   max-width: 700px;
   color: white;
   background-color: var(--third-color);
-  transition: 0.2s linear;
+
   &.media-query {
     flex-direction: column;
     height: auto;
@@ -95,14 +95,17 @@ const EachProject = styled.div`
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
   }
-  :hover,
+  :hover:not(:active),
   :focus {
+    transition: 0.2s linear;
     outline: none;
     background-color: white;
     cursor: pointer;
     color: var(--third-color);
   }
   :active {
+    transition: 0.1s ease-out;
+    box-shadow: 0 0 10px inset rgba(0, 0, 0, 1);
     color: white;
     background-color: var(--third-color);
   }
