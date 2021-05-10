@@ -4,7 +4,7 @@ import useMediaQuery from "./useMediaQuery";
 // icons
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { MdEmail } from "react-icons/md";
-import { ReactComponent as CVIcon } from "../Icons/cv-logo.svg";
+import { ReactComponent as CVIcon } from "../assets/cv-logo.svg";
 
 const Contact = ({ ContactRef }) => {
   // breakpoint is 700px
@@ -77,7 +77,6 @@ const Container = styled.div`
       color: var(--primary-color);
     }
   }
-
   a {
     display: flex;
     flex-direction: row;
@@ -90,7 +89,6 @@ const Container = styled.div`
     outline: none;
     color: var(--primary-color);
   }
-
   &.media-query {
     h1 {
       font-size: 3rem;
@@ -110,15 +108,6 @@ const Icon = styled.div`
   vertical-align: center;
   align-items: center;
   margin-bottom: 3rem;
-  a {
-    /* color: var(--accent-bg-color);
-    text-decoration: none; */
-  }
-  /* a:hover,
-  a:focus {
-    outline: none;
-    color: var(--primary-color);
-  } */
   &.read-icon {
     background-color: ${(props) =>
       props.isHovered ? "var(--primary-color)" : "var(--accent-bg-color)"};

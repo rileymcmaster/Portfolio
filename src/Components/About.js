@@ -46,7 +46,7 @@ const About = ({ AboutRef }) => {
             <div>
               <img
                 className="profile-picture"
-                src="https://res.cloudinary.com/bodyofwater/image/upload/v1620091850/RileyMcMaster_pbj6dl.jpg"
+                src="https://res.cloudinary.com/bodyofwater/image/upload/v1620672475/IMG_4371_1000w_lwsvcl.jpg"
                 alt="Riley"
               />
             </div>
@@ -68,7 +68,8 @@ const Container = styled.div`
   .profile-picture {
     object-fit: cover;
     width: 300px;
-    height: auto;
+    padding-bottom: 10px;
+    height: 300px;
     border-radius: 50%;
   }
   &.media-query {

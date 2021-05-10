@@ -9,8 +9,14 @@ const TitlePage = ({ TitlePageRef, offset }) => {
   return (
     <Container className={mediaQuery && "media-query"} ref={TitlePageRef}>
       <Title>
-        <h1 style={{ transform: `translateY(${offset * 1.2}px)` }}>Riley</h1>
         <h1
+          className="first-name"
+          style={{ transform: `translateY(${offset * 1.2}px)` }}
+        >
+          Riley
+        </h1>
+        <h1
+          className="last-name"
           style={{
             transform: `translateY(${offset * 1.05}px)`,
           }}
@@ -30,18 +36,44 @@ const TitlePage = ({ TitlePageRef, offset }) => {
 };
 
 const Container = styled.div`
+  background-image: url("https://res.cloudinary.com/bodyofwater/image/upload/v1620310669/prismatic-lake_trhgrc.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  @media only screen and (max-device-width: 700px) {
+    background-attachment: scroll;
+  }
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   overflow: hidden;
   position: relative;
   background-color: var(--accent-bg-color);
+  h1 {
+    color: var(--primary-color);
+    &.first-name {
+      text-shadow: 2px 0 5px rgba(0, 0, 0, 0.4), 0 -2px 15px rgba(0, 0, 0, 0.2);
+    }
+    &.last-name {
+      text-shadow: 2px -2px 5px rgba(0, 0, 0, 0.4),
+        0 -2px 15px rgba(0, 0, 0, 0.2);
+    }
+  }
   &.media-query {
     h1 {
       font-size: 4rem;
+      &.first-name {
+        text-shadow: 2px -2px 2px rgba(0, 0, 0, 0.3),
+          0 -2px 5px rgba(0, 0, 0, 0.1);
+      }
+      &.last-name {
+        text-shadow: 2px -2px 2px rgba(0, 0, 0, 0.3),
+          0 -2px 5px rgba(0, 0, 0, 0.1);
+      }
     }
     h2 {
-      font-size: 2rem;
+      font-size: 1.2rem;
     }
     p {
       font-size: 1rem;
@@ -56,22 +88,18 @@ const Title = styled.div`
   max-width: 900px;
   margin-top: 5rem;
   margin-left: 5%;
-  h1 {
-    color: var(--primary-color);
-    text-shadow: 0 0 10px var(--accent-bg-color);
-  }
 `;
 
 const SkillsCard = styled.div`
   max-width: 900px;
   z-index: 0;
-  color: var(--primary-color);
+  color: var(--accent-bg-color);
+  background-color: var(--primary-color);
   position: absolute;
-  padding-right: 40px;
-  margin-left: 5%;
-  bottom: 20%;
-  left: 0;
-  width: 100%;
+  padding: 1rem;
+  margin: 0 5%;
+  bottom: 10vh;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4), 2px 2px 15px rgba(0, 0, 0, 0.2);
   p {
     margin-top: 10px;
     font-size: 1.2rem;
