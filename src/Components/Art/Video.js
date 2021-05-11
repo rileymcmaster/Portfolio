@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import useMediaQuery from "../useMediaQuery";
 
@@ -7,13 +7,29 @@ const Video = () => {
   let mediaQuery = useMediaQuery();
   //
   const [showHoverMessage, setShowHoverMessage] = useState(true);
+  //
   // VIDEO CONTROLS
-  const playMovie = (e) => {
-    e.target.play();
-  };
-  const pauseMovie = (e) => {
-    e.target.pause();
-  };
+  useEffect(() => {
+    let currentVideo = document.querySelector("video");
+    const playVideo = () => {
+      currentVideo.play();
+      setShowHoverMessage(false);
+    };
+    const pauseVideo = () => {
+      currentVideo.pause();
+      setShowHoverMessage(true);
+    };
+    const eventListeners = () => {
+      currentVideo.addEventListener("mouseenter", playVideo);
+      currentVideo.addEventListener("mouseleave", pauseVideo);
+      return () => {
+        currentVideo.removeEventListener("mouseenter", playVideo);
+        currentVideo.removeEventListener("mouseleave", pauseVideo);
+      };
+    };
+    eventListeners();
+  }, []);
+
   return (
     <>
       {mediaQuery ? (
@@ -29,16 +45,9 @@ const Video = () => {
           ></iframe>
         </YoutubeVideo>
       ) : (
-        <VideoContainer
-          onMouseEnter={() => setShowHoverMessage(false)}
-          onMouseLeave={() => setShowHoverMessage(true)}
-        >
+        <VideoContainer>
           <p className={!showHoverMessage && "hide-message"}>Hover to play</p>
-          <video
-            loop
-            onMouseOver={(e) => playMovie(e)}
-            onMouseLeave={(e) => pauseMovie(e)}
-          >
+          <video loop>
             <source
               src="https://res.cloudinary.com/bodyofwater/video/upload/v1620753680/Portolio/Video/Assembly_2_2_Loop_x264_e4p0mn.mp4"
               type="video/mp4"
