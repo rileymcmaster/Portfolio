@@ -36,7 +36,7 @@ const TitlePage = ({ TitlePageRef, offset }) => {
 };
 
 const Container = styled.div`
-  background-image: url("https://res.cloudinary.com/bodyofwater/image/upload/v1620310669/prismatic-lake_trhgrc.jpg");
+  background-image: url("https://res.cloudinary.com/bodyofwater/image/upload/v1620753917/Portolio/BG%20image/prismatic-lake_vhwukm.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;

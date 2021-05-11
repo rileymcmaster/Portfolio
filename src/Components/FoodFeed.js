@@ -34,7 +34,9 @@ const FoodFeed = () => {
               </Section>
               {/* TECH USED */}
               <Section className="technologies">
-                <h3>Technologies used</h3>
+                <h3 className={mediaQuery && "media-query"}>
+                  Technologies used
+                </h3>
                 <p className="indent">
                   React, Redux, JavaScript, Node, Express, Mongoose, MongoDB,
                   Cloudinary, CSS
@@ -153,6 +155,9 @@ const Wrapper = styled.div`
     display: inline-block;
     padding: 10px;
     margin-bottom: 0.5rem;
+  }
+  h3.media-query {
+    width: 100%;
   }
   p,
   li {
