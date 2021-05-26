@@ -44,11 +44,11 @@ const About = ({ AboutRef }) => {
               </p>
             </AboutText>
             <div>
-              <img
+              {/* <img
                 className="profile-picture"
                 src="https://res.cloudinary.com/bodyofwater/image/upload/v1620672475/IMG_4371_1000w_lwsvcl.jpg"
                 alt="Riley"
-              />
+              /> */}
             </div>
           </AboutCard>
         </MainCard>
