@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import GlobalStyles from "./GlobalStyles";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 // components
 import Header from "./Components/Header";
 import TitlePage from "./Components/TitlePage";

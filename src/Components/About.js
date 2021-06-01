@@ -1,18 +1,26 @@
 import React from "react";
 import styled from "styled-components";
 import useMediaQuery from "./useMediaQuery";
+import { useSpring, animated } from "react-spring";
 
 const About = ({ AboutRef }) => {
   // breakpoint is 850px
   let mediaQuery = useMediaQuery();
 
+  const config = { mass: 7, tension: 700, friction: 200 };
+
+  const springProps = useSpring({
+    config,
+    delay: 200,
+    from: { opacity: 0, x: -500 },
+    to: { opacity: 1, x: 0 },
+  });
+
   return (
     <Wrapper ref={AboutRef}>
       <Container className={mediaQuery && "media-query"}>
         <MainCard>
-          <Title>
-            <h1>About</h1>
-          </Title>
+          <h1>About</h1>
           <AboutCard className={mediaQuery && "media-query"}>
             <AboutText>
               <p>
@@ -65,6 +73,9 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 1000px;
+  h1 {
+    color: var(--accent-bg-color);
+  }
   .profile-picture {
     object-fit: cover;
     width: 300px;

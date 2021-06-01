@@ -20,51 +20,40 @@ const Header = ({
     ref.current.scrollIntoView();
   };
 
+  const iconSize = (x) => {
+    let result;
+    if (mediaQuery) {
+      result = x * 10;
+    }
+    if (!mediaQuery) {
+      result = x * 15;
+    }
+    return result;
+  };
+
   return (
     <>
-      {mediaQuery ? (
-        // MOBILE ************
-        <Container className="media-query">
-          <button type="button" onClick={() => jumpToSection(TitlePageRef)}>
-            <GiFalling size={20} />
-          </button>
-          <button type="button" onClick={() => jumpToSection(AboutRef)}>
-            <BsFillQuestionDiamondFill size={20} />
-          </button>
-          <button type="button" onClick={() => jumpToSection(ProjectsRef)}>
-            <FaHammer size={18} />
-          </button>
-          <button type="button" onClick={() => jumpToSection(ArtRef)}>
-            <FaPaintBrush size={15} />
-          </button>
-          <button
-            className="icon"
-            type="button"
-            onClick={() => jumpToSection(ContactRef)}
-          >
-            <AiFillPhone size={20} />
-          </button>
-        </Container>
-      ) : (
-        // DESKTOP **********
-        <Container>
-          <button type="button" onClick={() => jumpToSection(TitlePageRef)}>
-            Home
-          </button>
-          <button type="button" onClick={() => jumpToSection(AboutRef)}>
-            About
-          </button>
-          <button type="button" onClick={() => jumpToSection(ProjectsRef)}>
-            Projects
-          </button>
-          <button type="button" onClick={() => jumpToSection(ArtRef)}>
-            Art
-          </button>
-          <button type="button" onClick={() => jumpToSection(ContactRef)}>
-            Contact
-          </button>
-        </Container>
-      )}
+      <Container className={mediaQuery && "media-query"}>
+        <button type="button" onClick={() => jumpToSection(TitlePageRef)}>
+          <GiFalling size={iconSize(2)} />
+        </button>
+        <button type="button" onClick={() => jumpToSection(AboutRef)}>
+          <BsFillQuestionDiamondFill size={iconSize(2)} />
+        </button>
+        <button type="button" onClick={() => jumpToSection(ProjectsRef)}>
+          <FaHammer size={iconSize(1.8)} />
+        </button>
+        <button type="button" onClick={() => jumpToSection(ArtRef)}>
+          <FaPaintBrush size={iconSize(1.6)} />
+        </button>
+        <button
+          className="icon"
+          type="button"
+          onClick={() => jumpToSection(ContactRef)}
+        >
+          <AiFillPhone size={iconSize(2)} />
+        </button>
+      </Container>
     </>
   );
 };
@@ -78,8 +67,10 @@ const Container = styled.div`
   top: 0;
 
   width: 100vw;
-  height: 40px;
+  height: 3.2rem;
   padding-bottom: 0.5rem;
+  padding-left: var(--page-vertical-padding);
+  gap: 1.5rem;
 
   z-index: 99999;
   overflow: hidden;
@@ -107,6 +98,9 @@ const Container = styled.div`
   }
   &.media-query {
     justify-content: space-between;
+    padding-left: 0;
+    height: 2.5rem;
+    gap: 0;
   }
   &.media-query > button {
     margin-bottom: 5px;

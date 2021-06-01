@@ -7,7 +7,9 @@ export default createGlobalStyle`
       --third-color: #5296A5;
       --accent-bg-color: #221E22;
       --page-horizontal-padding: 20px;
-      --page-vertical-padding: 50px;
+      --page-horizontal-padding-mobile: 10px;
+      --page-vertical-padding-mobile: 1rem;
+      --page-vertical-padding: 3rem;
       --recipe-page-padding: 50px;
       --header-height: 50px;
       --max-content-width: 1200px;
@@ -45,12 +47,12 @@ body {
     }
 
     h1 {
-    font-size: 10rem;
+        font-size: clamp(3.5em,calc(15 / 80 * 100vw), 10em);
     user-select: none;
 }
 
     h2{
-    font-size: 3rem;
+        font-size: clamp(1.5em,calc(5 / 80 * 100vw), 3em);
 }
 
 html, body, div, span, applet, object, iframe,
@@ -69,10 +71,8 @@ html, body, div, span, applet, object, iframe,
         margin: 0;
         padding: 0;
         border: 0;
-        /* font-size: 100%; */
+
 /* 
-        vertical-align: baseline;
-        box-sizing: border-box; */
     }
     /* HTML5 display-role reset for older browsers */
     article, aside, details, figcaption, figure,

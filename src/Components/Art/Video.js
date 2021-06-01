@@ -39,9 +39,9 @@ const Video = () => {
             height="315"
             src="https://www.youtube.com/embed/4Efi7pVMowk?controls=0"
             title="Embedded youtube video"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </YoutubeVideo>
       ) : (
