@@ -55,6 +55,9 @@ body {
         font-size: clamp(1.5em,calc(5 / 80 * 100vw), 3em);
 }
 
+p, a {
+    font-size: clamp(.5em,calc(3 / 80 * 100vw), 1.2em);}
+
 html, body, div, span, applet, object, iframe,
     h1, h2, h3, h4, h5, h6, p, blockquote, pre,
     a, abbr, acronym, address, big, cite, code,

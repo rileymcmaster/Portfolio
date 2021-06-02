@@ -21,16 +21,17 @@ const Container = styled.div`
   background-color: var(--primary-color);
   color: var(--accent-bg-color);
   overflow-x: hidden;
-  padding: 40px 20px 20px 20px;
+  padding: var(--page-horizontal-padding) var(--page-vertical-padding);
   min-height: 100vh;
   h1 {
     color: var(--third-color);
     margin-bottom: 5rem;
-    font-size: 8rem;
+    font-size: clamp(3.5em, calc(12 / 80 * 100vw), 10em);
   }
   &.media-query {
+    padding: var(--page-horizontal-padding-mobile)
+      var(--page-vertical-padding-mobile);
     h1 {
-      font-size: 3rem;
       margin-bottom: 1rem;
     }
   }

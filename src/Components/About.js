@@ -20,7 +20,9 @@ const About = ({ AboutRef }) => {
     <Wrapper ref={AboutRef}>
       <Container className={mediaQuery && "media-query"}>
         <MainCard>
-          <h1>About</h1>
+          <animated.div style={{ springProps }}>
+            <h1>About</h1>
+          </animated.div>
           <AboutCard className={mediaQuery && "media-query"}>
             <AboutText>
               <p>
@@ -65,11 +67,11 @@ const About = ({ AboutRef }) => {
   );
 };
 const Wrapper = styled.div`
-  padding: 40px 20px 20px 20px;
   min-height: 100vh;
   background-color: var(--third-color);
 `;
 const Container = styled.div`
+  padding: var(--page-horizontal-padding) var(--page-vertical-padding);
   display: flex;
   flex-direction: column;
   max-width: 1000px;
@@ -84,20 +86,11 @@ const Container = styled.div`
     border-radius: 50%;
   }
   &.media-query {
-    h1 {
-      font-size: 6rem;
-    }
+    padding: var(--page-horizontal-padding-mobile)
+      var(--page-vertical-padding-mobile);
   }
 `;
 const MainCard = styled.div``;
-
-const Title = styled.div`
-  overflow: hidden;
-  z-index: 999999;
-  h1 {
-    color: var(--accent-bg-color);
-  }
-`;
 
 const AboutCard = styled.div`
   display: flex;
@@ -116,9 +109,11 @@ const AboutText = styled.div`
   p,
   a {
     color: white;
-    font-size: 1.2rem;
     line-height: 1.5;
-    margin-bottom: 2rem;
+    margin-bottom: 2em;
+  }
+  a {
+    font-size: clamp(0.5em, calc(3 / 80 * 100vw), 1em);
   }
 `;
 
