@@ -66,10 +66,16 @@ const EachProject = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 8rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
   height: 200px;
   max-width: 700px;
   color: white;
+
   background-color: var(--third-color);
+  border-radius: 5px;
+  box-shadow: 0 0 0 10px var(--primary-color),
+    0 0 0 20px var(--third-color) /* 5px 5px 10px 20px var(--secondary-color) */;
 
   &.media-query {
     flex-direction: column;
@@ -102,6 +108,8 @@ const EachProject = styled.div`
     background-color: white;
     cursor: pointer;
     color: var(--third-color);
+    box-shadow: 0 0 0 10px var(--primary-color),
+      /* 0 0 0 20px var(--secondary-color); */ 0 0 0 20px white;
   }
   :active {
     transition: 0.1s ease-out;
@@ -114,6 +122,7 @@ const EachProject = styled.div`
 const TextCard = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   padding: 20px;
   width: 100%;
   height: 100%;
@@ -122,7 +131,6 @@ const TextCard = styled.div`
     margin-bottom: 1.1rem;
   }
   p {
-    font-size: 1.1rem;
     line-height: 1.2;
   }
   &.left {

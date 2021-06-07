@@ -9,8 +9,8 @@ import Projects from "./Components/Projects/index";
 import About from "./Components/About";
 import Art from "./Components/Art/Index";
 import Contact from "./Components/Contact";
-import FoodFeed from "./Components/FoodFeed";
-import Cyborg from "./Components/Cyborg";
+import FoodFeed from "./Components/Projects/FoodFeed";
+import Cyborg from "./Components/Projects/Cyborg";
 import ScrollToTop from "./Components/ScrollToTop";
 
 const App = () => {

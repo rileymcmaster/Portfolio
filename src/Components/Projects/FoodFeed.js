@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
-import useMediaQuery from "./useMediaQuery";
+import useMediaQuery from "../useMediaQuery";
 // icons
 import { BsArrowLeftShort } from "react-icons/bs";
 import { AiFillGithub } from "react-icons/ai";
@@ -44,7 +44,7 @@ const FoodFeed = () => {
               </Section>
             </div>
             <img
-              src="https://res.cloudinary.com/bodyofwater/image/upload/v1619388405/Screencap7_4_nytqum.gif"
+              src="https://res.cloudinary.com/bodyofwater/image/upload/v1623080683/Portolio/Projects/Food%20Feed/Screencap7_4_rwqybd.gif"
               alt="GIF of FoodFeed's features"
             />
           </IntroSection>
