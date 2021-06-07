@@ -72,11 +72,12 @@ const EachProject = styled.div`
   max-width: 700px;
   color: white;
 
-  background-color: var(--third-color);
   border-radius: 5px;
-  box-shadow: 0 0 0 10px var(--primary-color),
-    0 0 0 20px var(--third-color) /* 5px 5px 10px 20px var(--secondary-color) */;
-
+  /* background-color: var(--third-color); */
+  /* box-shadow: 0 0 0 10px var(--primary-color), 0 0 0 20px var(--third-color); */
+  /* box-shadow: 0 0 0 10px var(--primary-color), 0 0 0 20px var(--secondary-color); */
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
   &.media-query {
     flex-direction: column;
     height: auto;
@@ -101,21 +102,24 @@ const EachProject = styled.div`
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
   }
+  transition: all 0.2s linear;
   :hover:not(:active),
   :focus {
-    transition: 0.2s linear;
     outline: none;
-    background-color: white;
     cursor: pointer;
-    color: var(--third-color);
-    box-shadow: 0 0 0 10px var(--primary-color),
-      /* 0 0 0 20px var(--secondary-color); */ 0 0 0 20px white;
+    box-shadow: 0 0 0 10px var(--primary-color), 0 0 0 20px white;
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.05);
   }
   :active {
-    transition: 0.1s ease-out;
-    box-shadow: 0 0 10px inset rgba(0, 0, 0, 1);
-    color: white;
-    background-color: var(--third-color);
+    transition: all 0.1s ease-out;
+    /* color: var(--third-color); */
+    /* box-shadow: 0 0 0 10px var(--primary-color), 0 0 0 20px var(--third-color); */
+    /* background-color: var(--primary-color); */
+    background-color: var(--secondary-color);
+    transform: scale(1);
+    box-shadow: 0 0 0 10px var(--primary-color),
+      0 0 0 20px var(--secondary-color);
   }
 `;
 
