@@ -16,51 +16,57 @@ const Contact = ({ ContactRef }) => {
       <h1>CONTACT</h1>
       {/* GITHUB */}
       <LinkContainer className={mediaQuery && "media-query"}>
-        <StyledLink
-          className="regular-link"
-          target="_blank"
-          to={{ pathname: "https://github.com/rileymcmaster" }}
-        >
-          <div>
+        <div>
+          <StyledLink
+            className="regular-link"
+            target="_blank"
+            to={{ pathname: "https://github.com/rileymcmaster" }}
+          >
             <Icon>
               <AiFillGithub size={80} />
               <h2>rileymcmaster</h2>
             </Icon>
-          </div>
-        </StyledLink>
+          </StyledLink>
+        </div>
         {/* LINKEDIN */}
-        <StyledLink
-          className="regular-link"
-          target="_blank"
-          to={{ pathname: "https://www.linkedin.com/in/rileymcmaster" }}
-        >
-          <Icon>
-            <AiFillLinkedin size={80} />
-            <h2>rileymcmaster</h2>
-          </Icon>
-        </StyledLink>
-        {/* CV */}
-        <CVLink
-          to={{ pathname: "https://read.cv/rileymcmaster" }}
-          target="_blank"
-        >
-          <div>
-            <Icon className="cv-icon">
-              <CVIcon fill="var(--third-color)" />
+        <div>
+          <StyledLink
+            className="regular-link"
+            target="_blank"
+            to={{ pathname: "https://www.linkedin.com/in/rileymcmaster" }}
+          >
+            <Icon>
+              <AiFillLinkedin size={80} />
+              <h2>rileymcmaster</h2>
             </Icon>
-            <h2 className="cv">rileymcmaster</h2>
-          </div>
-        </CVLink>
+          </StyledLink>
+        </div>
+        {/* CV */}
+        <div>
+          <CVLink
+            to={{ pathname: "https://read.cv/rileymcmaster" }}
+            target="_blank"
+          >
+            <div>
+              <Icon className="cv-icon">
+                <CVIcon fill="var(--third-color)" />
+              </Icon>
+              <h2 className="cv">rileymcmaster</h2>
+            </div>
+          </CVLink>
+        </div>
         {/* EMAIL */}
-        <StyledLink
-          target="_blank"
-          to={{ pathname: "mailto:rileymcmaster@gmail.com" }}
-        >
-          <Icon>
-            <MdEmail size={80} />
-            <h2>rileymcmaster@gmail.com</h2>
-          </Icon>
-        </StyledLink>
+        <div>
+          <StyledLink
+            target="_blank"
+            to={{ pathname: "mailto:rileymcmaster@gmail.com" }}
+          >
+            <Icon>
+              <MdEmail size={80} />
+              <h2>rileymcmaster@gmail.com</h2>
+            </Icon>
+          </StyledLink>
+        </div>
       </LinkContainer>
     </Container>
   );
@@ -68,7 +74,7 @@ const Contact = ({ ContactRef }) => {
 const Container = styled.div`
   min-height: 100vh;
   overflow: hidden;
-  padding: 40px 20px 5rem 20px;
+  padding: var(--page-horizontal-padding) var(--page-vertical-padding);
   background-color: var(--third-color);
   h1 {
     color: var(--accent-bg-color);
@@ -90,9 +96,8 @@ const Container = styled.div`
     outline: none;
   }
   &.media-query {
-    h1 {
-      font-size: 3rem;
-    }
+    padding: var(--page-horizontal-padding-mobile)
+      var(--page-vertical-padding-mobile);
     h2 {
       margin-left: 0.5rem;
       font-size: 1rem;
@@ -104,9 +109,8 @@ const Container = styled.div`
 `;
 const LinkContainer = styled.div`
   display: flex;
-  max-width: 800px;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
   &.media-query {
     gap: 1rem;
   }
@@ -129,16 +133,19 @@ const StyledLink = styled(Link)`
   }
 `;
 const CVLink = styled(Link)`
+  /* display: ; */
   display: inline-block;
   clear: left;
   div {
     display: flex;
     flex-direction: row;
+    /* display: inline-block; */
   }
   div > div {
     background-color: var(--accent-bg-color);
+    display: flex;
+    justify-content: center;
     border-radius: 50%;
-    padding: 10px;
   }
   :hover > div > div {
     background-color: var(--primary-color);
@@ -152,7 +159,6 @@ const Icon = styled.div`
   display: flex;
   vertical-align: center;
   align-items: center;
-  /* margin-bottom: 3rem; */
   &.cv-icon {
     width: 80px;
     height: 80px;

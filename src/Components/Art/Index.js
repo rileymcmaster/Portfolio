@@ -12,12 +12,10 @@ const Art = ({ ArtRef }) => {
   return (
     <Container className={mediaQuery && "media-query"} ref={ArtRef}>
       <h1>Art</h1>
-      {/* VIDEO */}
       <section>
         <h2>motion graphics & animation</h2>
         <Video />
       </section>
-      {/* PHOTOS */}
       <section>
         <h2>photography</h2>
         <PhotoGallery />
@@ -30,7 +28,7 @@ const Container = styled.div`
   background-color: var(--accent-bg-color);
   color: var(--primary-color);
   overflow-x: hidden;
-  padding: 40px 20px 20px 20px;
+  padding: var(--page-horizontal-padding) var(--page-vertical-padding);
 
   h2 {
     display: inline-block;
@@ -41,12 +39,10 @@ const Container = styled.div`
     margin-bottom: 3rem;
   }
   &.media-query {
-    h1 {
-      font-size: 3rem;
-    }
+    padding: var(--page-horizontal-padding-mobile)
+      var(--page-vertical-padding-mobile);
     h2 {
       margin: 1rem 0;
-      font-size: 1rem;
     }
   }
 `;

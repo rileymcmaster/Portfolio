@@ -3,7 +3,7 @@ import styled from "styled-components";
 import useMediaQuery from "./useMediaQuery";
 import { useSpring, animated } from "react-spring";
 import Slide from "react-reveal/Slide";
-import backgroundImage from "../assets/prismatic-lake.jpg";
+import prismaticBgImg from "../assets/prismatic-lake.jpg";
 
 const TitlePage = ({ TitlePageRef, offset }) => {
   // breakpoint is 700px
@@ -33,7 +33,11 @@ const TitlePage = ({ TitlePageRef, offset }) => {
   };
 
   return (
-    <Container className={mediaQuery && "media-query"} ref={TitlePageRef}>
+    <Container
+      style={{ backgroundImage: `url(${prismaticBgImg})` }}
+      className={mediaQuery && "media-query"}
+      ref={TitlePageRef}
+    >
       <Slide top>
         <Title style={springPropsTitle}>
           <h1
@@ -66,8 +70,6 @@ const TitlePage = ({ TitlePageRef, offset }) => {
 };
 
 const Container = styled.div`
-  background-image: url(${backgroundImage});
-  /* background-image: url("https://res.cloudinary.com/bodyofwater/image/upload/v1620753917/Portolio/BG%20image/prismatic-lake_vhwukm.jpg"); */
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
