@@ -16,7 +16,7 @@ const FoodFeed = () => {
       <BackIcon onClick={() => history.goBack()}>
         <BsArrowLeftShort size={50} />
       </BackIcon>
-      <Wrapper>
+      <Wrapper className={mediaQuery && "media-query"}>
         <Container>
           {/* TTITLE */}
           <h1>FOOD FEED</h1>
@@ -37,7 +37,7 @@ const FoodFeed = () => {
                 <h3 className={mediaQuery && "media-query"}>
                   Technologies used
                 </h3>
-                <p className="indent">
+                <p>
                   React, Redux, JavaScript, Node, Express, Mongoose, MongoDB,
                   Cloudinary, CSS
                 </p>
@@ -71,7 +71,7 @@ const FoodFeed = () => {
           {/* FEATURES */}
           <Section className="standalone">
             <h3>Features</h3>
-            <ul className="indent">
+            <ul>
               <li>Snap scrolling so the user can easily land on each page.</li>
               <li>Seamless style from viewing to editing modes.</li>
               <li>Link each variation of a recipe back to its original.</li>
@@ -88,7 +88,7 @@ const FoodFeed = () => {
 
           <Section className="card standalone marginTB">
             <h3>Design</h3>
-            <p className="indent">
+            <p>
               A mobile-first design was crucial as the intended audience is a
               user reading the recipe off their smartphones while cooking. The
               layout is clear and simple, with snap scrolling it is easily
@@ -101,13 +101,13 @@ const FoodFeed = () => {
           <BottomSection className={mediaQuery && "media-query"}>
             <Section>
               <h3>Issues faced</h3>
-              <p className="indent">
+              <p>
                 Designing a simple layout with high-functionality was a big task
                 to overcome. The end user experience was always at top of mind
                 as being able to easily follow the recipe was the most important
                 feature.
               </p>
-              <p className="indent">
+              <p>
                 I created the API of recipes over several iterations. Being able
                 to link particular ingredients to a specific direction required
                 using multiple array methods and nesting arrays within arrays of
@@ -138,7 +138,7 @@ const FoodFeed = () => {
 const Wrapper = styled.div`
   min-height: 100vh;
   overflow-x: hidden;
-  padding: 40px 20px 20px 20px;
+  padding: var(--page-horizontal-padding) var(--page-vertical-padding);
   min-height: 100vh;
   background-color: var(--primary-color);
   color: var(--accent-bg-color);
@@ -155,9 +155,6 @@ const Wrapper = styled.div`
     display: inline-block;
     padding: 10px;
     margin-bottom: 0.5rem;
-  }
-  h3.media-query {
-    width: 100%;
   }
   p,
   li {
@@ -179,6 +176,20 @@ const Wrapper = styled.div`
   }
   li {
     list-style-type: none;
+  }
+  ul {
+    margin-left: 1.5rem;
+  }
+  &.media-query {
+    padding: var(--page-horizontal-padding-mobile)
+      var(--page-vertical-padding-mobile);
+    h1 {
+      font-size: 3rem;
+      margin-top: 3rem;
+    }
+    h3 {
+      width: 100%;
+    }
   }
 `;
 
@@ -229,9 +240,6 @@ const Section = styled.section`
     border-bottom: 2px solid var(--secondary-color);
     border-top: 2px solid var(--secondary-color);
   }
-  .indent {
-    padding-left: 1rem;
-  }
   li {
     list-style: circle;
     line-height: 1.2;
@@ -266,7 +274,7 @@ const BottomSection = styled.div`
   margin-bottom: 2rem;
   img {
     display: flex;
-    margin-right: 1rem;
+    margin-right: 2.5rem;
     max-height: 500px;
   }
   &.media-query {

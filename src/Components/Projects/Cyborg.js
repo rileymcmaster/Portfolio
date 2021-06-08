@@ -16,7 +16,7 @@ const Cyborg = () => {
       <BackIcon onClick={() => history.goBack()}>
         <BsArrowLeftShort size={50} />
       </BackIcon>
-      <Container>
+      <Container className={mediaQuery && "media-query"}>
         <h1>Cyborg Social Club</h1>
         <IntroSection className={mediaQuery && "media-query"}>
           <div>
@@ -32,8 +32,8 @@ const Cyborg = () => {
             </Section>
             {/* Technologies used */}
             <Section className="technologies">
-              <h3>Technologies used</h3>
-              <p className="indent">
+              <h3 className={mediaQuery && "media-query"}>Technologies used</h3>
+              <p>
                 React, Redux, JavaScript, Node, Express, Mongoose, MongoDB, CSS
                 & Stripe
               </p>
@@ -116,7 +116,7 @@ const Cyborg = () => {
 const Container = styled.div`
   min-height: 100vh;
   overflow-x: hidden;
-  padding: 40px 20px 20px 20px;
+  padding: var(--page-horizontal-padding) var(--page-vertical-padding);
   min-height: 100vh;
   background-color: var(--primary-color);
   color: var(--accent-bg-color);
@@ -151,6 +151,16 @@ const Container = styled.div`
   p {
     font-size: 1.2rem;
   }
+  &.media-query {
+    padding: var(--page-horizontal-padding-mobile)
+      var(--page-vertical-padding-mobile);
+    h1 {
+      padding-top: 2rem;
+    }
+    h3 {
+      width: 100%;
+    }
+  }
 `;
 const DesktopImageContainer = styled.div`
   margin-top: 2rem;
@@ -164,7 +174,7 @@ const DesktopImageContainer = styled.div`
 
 const Section = styled.section`
   max-width: 900px;
-  margin-right: 20px;
+  /* margin-right: 20px; */
   line-height: 1.2;
   &.intro {
     background-color: var(--secondary-color);
@@ -198,7 +208,7 @@ const Section = styled.section`
     border-top: 2px solid var(--secondary-color);
   }
   .indent {
-    padding-left: 1rem;
+    /* padding-left: 1rem; */
   }
   &.marginT {
     margin-top: 4rem;
@@ -212,9 +222,13 @@ const IntroSection = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-right: 2rem;
   }
   &.media-query {
     flex-direction: column;
+    div {
+      margin-right: 0;
+    }
   }
   &.media-query > img {
     margin-top: 2rem;

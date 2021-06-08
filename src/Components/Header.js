@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import useMediaQuery from "./useMediaQuery";
+import ReactTooltip from "react-tooltip";
 // icons
 import { AiFillPhone } from "react-icons/ai";
 import { FaPaintBrush, FaHammer } from "react-icons/fa";
@@ -34,25 +35,47 @@ const Header = ({
   return (
     <>
       <Container className={mediaQuery && "media-query"}>
-        <button type="button" onClick={() => jumpToSection(TitlePageRef)}>
+        <button
+          data-tip="Landing page"
+          type="button"
+          onClick={() => jumpToSection(TitlePageRef)}
+        >
           <GiFalling size={iconSize(2)} />
         </button>
-        <button type="button" onClick={() => jumpToSection(AboutRef)}>
+        <ReactTooltip effect="solid" className="icon-tooltip" />
+        <button
+          data-tip="About me"
+          type="button"
+          onClick={() => jumpToSection(AboutRef)}
+        >
           <BsFillQuestionDiamondFill size={iconSize(2)} />
         </button>
-        <button type="button" onClick={() => jumpToSection(ProjectsRef)}>
+        <ReactTooltip effect="solid" className="icon-tooltip" />
+        <button
+          data-tip="Web projects"
+          type="button"
+          onClick={() => jumpToSection(ProjectsRef)}
+        >
           <FaHammer size={iconSize(1.8)} />
         </button>
-        <button type="button" onClick={() => jumpToSection(ArtRef)}>
+        <ReactTooltip effect="solid" className="icon-tooltip" />
+        <button
+          data-tip="Art projects"
+          type="button"
+          onClick={() => jumpToSection(ArtRef)}
+        >
           <FaPaintBrush size={iconSize(1.6)} />
         </button>
+        <ReactTooltip effect="solid" className="icon-tooltip" />
         <button
           className="icon"
           type="button"
+          data-tip="Contact"
           onClick={() => jumpToSection(ContactRef)}
         >
           <AiFillPhone size={iconSize(2)} />
         </button>
+        <ReactTooltip effect="solid" className="icon-tooltip" />
       </Container>
     </>
   );
@@ -106,6 +129,13 @@ const Container = styled.div`
     margin-bottom: 5px;
     font-size: 1.1rem;
     font-weight: 800;
+  }
+  .icon-tooltip {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 14px;
+    /* font-weight: 500; */
+    box-shadow: 2px 2px 5px var(--third-color);
   }
 `;
 export default Header;

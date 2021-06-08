@@ -71,11 +71,7 @@ const EachProject = styled.div`
   height: 200px;
   max-width: 700px;
   color: white;
-
   border-radius: 5px;
-  /* background-color: var(--third-color); */
-  /* box-shadow: 0 0 0 10px var(--primary-color), 0 0 0 20px var(--third-color); */
-  /* box-shadow: 0 0 0 10px var(--primary-color), 0 0 0 20px var(--secondary-color); */
   background-color: var(--secondary-color);
   color: var(--primary-color);
   &.media-query {
@@ -108,14 +104,11 @@ const EachProject = styled.div`
     outline: none;
     cursor: pointer;
     box-shadow: 0 0 0 10px var(--primary-color), 0 0 0 20px white;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 1);
     transform: scale(1.05);
   }
   :active {
     transition: all 0.1s ease-out;
-    /* color: var(--third-color); */
-    /* box-shadow: 0 0 0 10px var(--primary-color), 0 0 0 20px var(--third-color); */
-    /* background-color: var(--primary-color); */
     background-color: var(--secondary-color);
     transform: scale(1);
     box-shadow: 0 0 0 10px var(--primary-color),
