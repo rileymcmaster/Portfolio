@@ -23,9 +23,11 @@ export default createGlobalStyle`
     *,
     *:before,
     *:after {
+        margin: 0;
+        padding: 0;
         box-sizing: border-box;
-        font-family: Arial, Helvetica, sans-serif; 
-        font-size: 16px;
+
+        /* font-size: 16px; */
         
     }
     
@@ -36,11 +38,12 @@ export default createGlobalStyle`
     }
     
     html {
+        font-size: 100%;
     scroll-behavior: smooth;
 }
 
 body {
-
+    font-family: Arial, Helvetica, sans-serif; 
     }
 
     html, body {
@@ -71,9 +74,6 @@ html, body, div, span, applet, object, iframe,
     figure, figcaption, footer, header, hgroup,
     menu, nav, output, ruby, section, summary,
     time, mark, audio, video {
-        margin: 0;
-        padding: 0;
-        border: 0;
 
 /* 
     }

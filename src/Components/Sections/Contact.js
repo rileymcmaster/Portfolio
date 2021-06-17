@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import useMediaQuery from "./useMediaQuery";
+import useMediaQuery from "../Utils/useMediaQuery";
 // icons
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { MdEmail } from "react-icons/md";
-import { ReactComponent as CVIcon } from "../assets/cv-logo.svg";
+import { ReactComponent as CVIcon } from "../../assets/cv-logo.svg";
 
 const Contact = ({ ContactRef }) => {
   // breakpoint is 700px
@@ -78,6 +78,7 @@ const Container = styled.div`
   background-color: var(--third-color);
   h1 {
     color: var(--accent-bg-color);
+    margin-top: 1rem;
     margin-bottom: 2rem;
   }
   h2 {

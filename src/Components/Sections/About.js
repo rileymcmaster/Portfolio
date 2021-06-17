@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import useMediaQuery from "./useMediaQuery";
+import useMediaQuery from "../Utils/useMediaQuery";
 import { useSpring, animated } from "react-spring";
 
 const About = ({ AboutRef }) => {
@@ -77,6 +77,7 @@ const Container = styled.div`
   max-width: 1000px;
   h1 {
     color: var(--accent-bg-color);
+    margin-top: 1rem;
   }
   .profile-picture {
     object-fit: cover;

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import useMediaQuery from "./useMediaQuery";
+import useMediaQuery from "../Utils/useMediaQuery";
 import ReactTooltip from "react-tooltip";
 // icons
 import { AiFillPhone } from "react-icons/ai";

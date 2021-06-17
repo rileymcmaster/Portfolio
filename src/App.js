@@ -3,15 +3,15 @@ import GlobalStyles from "./GlobalStyles";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // components
-import Header from "./Components/Header";
-import TitlePage from "./Components/TitlePage";
-import Projects from "./Components/Projects/index";
-import About from "./Components/About";
-import Art from "./Components/Art/Index";
-import Contact from "./Components/Contact";
-import FoodFeed from "./Components/Projects/FoodFeed";
-import Cyborg from "./Components/Projects/Cyborg";
-import ScrollToTop from "./Components/ScrollToTop";
+import Header from "./Components/Sections/Header";
+import TitlePage from "./Components/Sections/TitlePage";
+import Projects from "./Components/Sections/Projects/index";
+import About from "./Components/Sections/About";
+import Art from "./Components/Sections/Art/Index";
+import Contact from "./Components/Sections/Contact";
+import FoodFeed from "./Components/Sections/ProjectEach/FoodFeed";
+import Cyborg from "./Components/Sections/ProjectEach/Cyborg";
+import ScrollToTop from "./Components/Utils/ScrollToTop";
 
 const App = () => {
   const TitlePageRef = useRef(null);

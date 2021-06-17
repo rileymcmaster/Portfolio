@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import useMediaQuery from "./useMediaQuery";
+import useMediaQuery from "../Utils/useMediaQuery";
 import { useSpring, animated } from "react-spring";
 import Slide from "react-reveal/Slide";
-import prismaticBgImg from "../assets/prismatic-lake.jpg";
+import prismaticBgImg from "../../assets/prismatic-lake.jpg";
 
 const TitlePage = ({ TitlePageRef, offset }) => {
   // breakpoint is 700px
@@ -40,18 +40,27 @@ const TitlePage = ({ TitlePageRef, offset }) => {
     >
       <Slide top>
         <Title style={springPropsTitle}>
-          <h1
-            style={{ transform: parallaxEffects.title1 }}
-            className="first-name"
-          >
-            Riley
-          </h1>
-          <h1
-            style={{ transform: parallaxEffects.title2 }}
-            className="last-name"
-          >
-            McMaster
-          </h1>
+          {mediaQuery ? (
+            <>
+              <h1 className="first-name">Riley</h1>
+              <h1 className="last-name">McMaster</h1>
+            </>
+          ) : (
+            <>
+              <h1
+                style={{ transform: parallaxEffects.title1 }}
+                className="first-name"
+              >
+                Riley
+              </h1>
+              <h1
+                style={{ transform: parallaxEffects.title2 }}
+                className="last-name"
+              >
+                McMaster
+              </h1>{" "}
+            </>
+          )}
         </Title>
       </Slide>
       <SkillsCardContainer style={springPropsSkillsCard}>
@@ -122,7 +131,9 @@ const SkillsCardContainer = styled(animated.div)`
 `;
 
 const SkillsCard = styled.div`
-  transform: ${(props) => props.parallax.skillsCard};
+  @media (min-width: 700px) {
+    transform: ${(props) => props.parallax.skillsCard};
+  }
   max-width: 39rem;
   z-index: 0;
   color: var(--accent-bg-color);

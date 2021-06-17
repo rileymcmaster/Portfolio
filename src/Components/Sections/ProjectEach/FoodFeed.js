@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
-import useMediaQuery from "../useMediaQuery";
+import useMediaQuery from "../../Utils/useMediaQuery";
 // icons
 import { BsArrowLeftShort } from "react-icons/bs";
 import { AiFillGithub } from "react-icons/ai";

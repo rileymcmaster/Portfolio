@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import useMediaQuery from "../useMediaQuery";
+import useMediaQuery from "../../Utils/useMediaQuery";
 
 const Video = () => {
   // breakpoint is 700px
