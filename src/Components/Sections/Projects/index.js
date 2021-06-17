@@ -1,19 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import ProjectCard from "./ProjectCard";
-import useMediaQuery from "../useMediaQuery";
+import useMediaQuery from "../../Utils/useMediaQuery";
 
 const Projects = ({ ProjectsRef }) => {
   // breakpoint is 700px
   let mediaQuery = useMediaQuery();
 
   return (
-    <>
-      <Container className={mediaQuery && "media-query"} ref={ProjectsRef}>
-        <h1>PROJECTS</h1>
-        <ProjectCard />
-      </Container>
-    </>
+    <Container className={mediaQuery && "media-query"} ref={ProjectsRef}>
+      <h1>PROJECTS</h1>
+      <ProjectCard />
+    </Container>
   );
 };
 
@@ -25,6 +23,7 @@ const Container = styled.div`
   min-height: 100vh;
   h1 {
     color: var(--third-color);
+    margin-top: 1rem;
     margin-bottom: 5rem;
     font-size: clamp(3.5em, calc(12 / 80 * 100vw), 10em);
   }

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import useMediaQuery from "../useMediaQuery";
+import useMediaQuery from "../../Utils/useMediaQuery";
 
 const ProjectCard = () => {
   // breakpoint is 850px
@@ -72,7 +72,9 @@ const EachProject = styled.div`
   max-width: 700px;
   color: white;
   border-radius: 5px;
-  background-color: var(--secondary-color);
+  background-color: var(--third-color);
+  box-shadow: 0 0 0 4px var(--primary-color), 0 0 0 8px var(--third-color);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   color: var(--primary-color);
   &.media-query {
     flex-direction: column;
@@ -103,9 +105,10 @@ const EachProject = styled.div`
   :focus {
     outline: none;
     cursor: pointer;
-    box-shadow: 0 0 0 10px var(--primary-color), 0 0 0 20px white;
+    box-shadow: 0 0 0 8px var(--primary-color), 0 0 0 16px white;
     background-color: rgba(255, 255, 255, 1);
-    transform: scale(1.05);
+    transform: scale(1.02);
+    text-shadow: none;
   }
   :active {
     transition: all 0.1s ease-out;
@@ -124,10 +127,11 @@ const TextCard = styled.div`
   width: 100%;
   height: 100%;
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-bottom: 1.1rem;
   }
   p {
+    font-size: 1.2rem;
     line-height: 1.2;
   }
   &.left {

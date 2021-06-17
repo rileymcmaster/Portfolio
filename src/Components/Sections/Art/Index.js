@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import useMediaQuery from "../useMediaQuery";
+import useMediaQuery from "../../Utils/useMediaQuery";
 
 import Video from "./Video";
 import PhotoGallery from "./PhotoGallery";
@@ -29,7 +29,9 @@ const Container = styled.div`
   color: var(--primary-color);
   overflow-x: hidden;
   padding: var(--page-horizontal-padding) var(--page-vertical-padding);
-
+  h1 {
+    margin-top: 1rem;
+  }
   h2 {
     display: inline-block;
     margin: 2rem 0;
