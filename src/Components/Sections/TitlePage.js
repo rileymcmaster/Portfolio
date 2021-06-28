@@ -4,6 +4,7 @@ import useMediaQuery from "../Utils/useMediaQuery";
 import { useSpring, animated } from "react-spring";
 import Slide from "react-reveal/Slide";
 import prismaticBgImg from "../../assets/prismatic-lake.jpg";
+// const prismaticBgImg = require("../../assets/prismatic-lake.jpg");
 
 const TitlePage = ({ TitlePageRef, offset }) => {
   // breakpoint is 700px
@@ -35,7 +36,7 @@ const TitlePage = ({ TitlePageRef, offset }) => {
   return (
     <Container
       style={{ backgroundImage: `url(${prismaticBgImg})` }}
-      className={mediaQuery && "media-query"}
+      className={mediaQuery ? "media-query" : undefined}
       ref={TitlePageRef}
     >
       <Slide top>
