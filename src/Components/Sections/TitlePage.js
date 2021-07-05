@@ -67,10 +67,6 @@ const TitlePage = ({ TitlePageRef, offset }) => {
         <SkillsCard parallax={parallaxEffects}>
           <Slide bottom>
             <h2>Full-stack Web Developer</h2>
-            {/* <p>
-              React, Redux, JavaScript, Node, Express, Mongoose, MongoDB, CSS &
-              HTML5
-            </p> */}
           </Slide>
         </SkillsCard>
       </SkillsCardContainer>
