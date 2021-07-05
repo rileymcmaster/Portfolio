@@ -1,39 +1,27 @@
 import React from "react";
 import styled from "styled-components";
 import useMediaQuery from "../Utils/useMediaQuery";
-import { useSpring, animated } from "react-spring";
 
 const About = ({ AboutRef }) => {
-  // breakpoint is 850px
+  // breakpoint is 700px
   let mediaQuery = useMediaQuery();
-
-  const config = { mass: 7, tension: 700, friction: 200 };
-
-  const springProps = useSpring({
-    config,
-    delay: 200,
-    from: { opacity: 0, x: -500 },
-    to: { opacity: 1, x: 0 },
-  });
 
   return (
     <Wrapper ref={AboutRef}>
       <Container className={mediaQuery && "media-query"}>
         <MainCard>
-          <animated.div style={{ springProps }}>
-            <h1>About</h1>
-          </animated.div>
+          <h1>About</h1>
           <AboutCard className={mediaQuery && "media-query"}>
             <AboutText>
               <p>
                 Hey! I'm Riley, I'm a web developer, cyclist and musician and I
-                like to turn everything I do into an art project. I am inspired
-                to connect with people by interpreting my personal experiences
-                into something tangible that other people can engage with.
+                like to turn everything I do into an art project. By translating
+                my own experiences into something tangible, I am able to share
+                my ideas in a way that others can engage with.
               </p>
               <p>
-                From making BMX videos with friends, photography zines, animated
-                music videos and documenting my{" "}
+                From making BMX videos with friends as a teenager, to
+                photography zines, animated music videos and documenting my{" "}
                 <a target="blank" href="https://www.instagram.com/localtarps">
                   daily commute
                 </a>
@@ -41,9 +29,9 @@ const About = ({ AboutRef }) => {
                 want to overcome.
               </p>
               <p>
-                I moved from Vancouver to Montreal looking for a new creative
-                and technical challenge, which brought me to coding. All of my
-                experience with graphic design and the workflow and
+                I recently moved from Vancouver to Montreal looking for a new
+                creative and technical challenge, which brought me to coding.
+                All of my experience with graphic design and the workflow and
                 intuitiveness of video editing translated instantly to building
                 websites. I had all these ideas in the back of my mind that I
                 didn't know how to execute which finally had an outlet.
@@ -53,13 +41,6 @@ const About = ({ AboutRef }) => {
                 collaborating and seeing projects through from idea to delivery!
               </p>
             </AboutText>
-            <div>
-              {/* <img
-                className="profile-picture"
-                src="https://res.cloudinary.com/bodyofwater/image/upload/v1620672475/IMG_4371_1000w_lwsvcl.jpg"
-                alt="Riley"
-              /> */}
-            </div>
           </AboutCard>
         </MainCard>
       </Container>

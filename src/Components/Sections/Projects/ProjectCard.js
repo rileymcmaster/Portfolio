@@ -36,13 +36,13 @@ const ProjectCard = () => {
       {/* // */}
       {/* // RIGHT */}
       <StyledLink to="/project/cyborg">
-        <EachProject className={mediaQuery ? "media-query" : "right"}>
+        <EachProject className={mediaQuery ? "media-query" : "left"}>
           <img
-            className={mediaQuery ? "" : "right"}
+            className={mediaQuery ? "" : "left"}
             src="https://res.cloudinary.com/bodyofwater/image/upload/v1620151131/CyborgStill1_ytbdw3.jpg"
             alt="Food Feed thumbnail"
           />
-          <TextCard className={mediaQuery ? "" : "right"}>
+          <TextCard className={mediaQuery ? "" : "left"}>
             <h3>Cyborg Social Club</h3>
             <p>
               A collaborative project: an e-commerce store of wearable
@@ -65,7 +65,7 @@ const StyledLink = styled(Link)`
 const EachProject = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 8rem;
+  margin-bottom: 12rem;
   margin-left: 1rem;
   margin-right: 1rem;
   height: 200px;
@@ -73,8 +73,7 @@ const EachProject = styled.div`
   color: white;
   border-radius: 5px;
   background-color: var(--third-color);
-  box-shadow: 0 0 0 4px var(--primary-color), 0 0 0 8px var(--third-color);
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   color: var(--primary-color);
   &.media-query {
     flex-direction: column;
@@ -105,17 +104,16 @@ const EachProject = styled.div`
   :focus {
     outline: none;
     cursor: pointer;
-    box-shadow: 0 0 0 8px var(--primary-color), 0 0 0 16px white;
+    box-shadow: 0 0 0px 4px var(--primary-color), 0 0 10px 5px white;
     background-color: rgba(255, 255, 255, 1);
     transform: scale(1.02);
     text-shadow: none;
   }
   :active {
     transition: all 0.1s ease-out;
-    background-color: var(--secondary-color);
+    background-color: white;
+    text-shadow: none;
     transform: scale(1);
-    box-shadow: 0 0 0 10px var(--primary-color),
-      0 0 0 20px var(--secondary-color);
   }
 `;
 

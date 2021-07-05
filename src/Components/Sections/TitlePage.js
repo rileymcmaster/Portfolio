@@ -4,7 +4,6 @@ import useMediaQuery from "../Utils/useMediaQuery";
 import { useSpring, animated } from "react-spring";
 import Slide from "react-reveal/Slide";
 import prismaticBgImg from "../../assets/prismatic-lake.jpg";
-// const prismaticBgImg = require("../../assets/prismatic-lake.jpg");
 
 const TitlePage = ({ TitlePageRef, offset }) => {
   // breakpoint is 700px
@@ -68,10 +67,10 @@ const TitlePage = ({ TitlePageRef, offset }) => {
         <SkillsCard parallax={parallaxEffects}>
           <Slide bottom>
             <h2>Full-stack Web Developer</h2>
-            <p>
+            {/* <p>
               React, Redux, JavaScript, Node, Express, Mongoose, MongoDB, CSS &
               HTML5
-            </p>
+            </p> */}
           </Slide>
         </SkillsCard>
       </SkillsCardContainer>
@@ -142,6 +141,7 @@ const SkillsCard = styled.div`
   padding: 1rem;
   margin-top: auto;
   margin-bottom: 2rem;
+  text-align: center;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4), 2px 2px 15px rgba(0, 0, 0, 0.2);
   p {
     margin-top: 10px;

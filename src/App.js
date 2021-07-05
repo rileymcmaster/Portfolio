@@ -32,29 +32,30 @@ const App = () => {
     <>
       <GlobalStyles />
       <Router>
-        <ScrollToTop />
-        <Switch>
-          <Route exact path="/">
-            <Header
-              TitlePageRef={TitlePageRef}
-              ProjectsRef={ProjectsRef}
-              AboutRef={AboutRef}
-              ArtRef={ArtRef}
-              ContactRef={ContactRef}
-            />
-            <TitlePage offset={offset} TitlePageRef={TitlePageRef} />
-            <About offset={offset} AboutRef={AboutRef} />
-            <Projects ProjectsRef={ProjectsRef} />
-            <Art ArtRef={ArtRef} />
-            <Contact ContactRef={ContactRef} />
-          </Route>
-          <Route exact path="/project/foodfeed">
-            <FoodFeed />
-          </Route>
-          <Route exact path="/project/cyborg">
-            <Cyborg />
-          </Route>
-        </Switch>
+        <ScrollToTop>
+          <Switch>
+            <Route exact path="/">
+              <Header
+                TitlePageRef={TitlePageRef}
+                ProjectsRef={ProjectsRef}
+                AboutRef={AboutRef}
+                ArtRef={ArtRef}
+                ContactRef={ContactRef}
+              />
+              <TitlePage offset={offset} TitlePageRef={TitlePageRef} />
+              <About offset={offset} AboutRef={AboutRef} />
+              <Projects ProjectsRef={ProjectsRef} />
+              <Art ArtRef={ArtRef} />
+              <Contact ContactRef={ContactRef} />
+            </Route>
+            <Route exact path="/project/foodfeed">
+              <FoodFeed />
+            </Route>
+            <Route exact path="/project/cyborg">
+              <Cyborg />
+            </Route>
+          </Switch>
+        </ScrollToTop>
       </Router>
     </>
   );
