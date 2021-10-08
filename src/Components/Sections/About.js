@@ -8,10 +8,10 @@ const About = ({ AboutRef }) => {
 
   return (
     <Wrapper ref={AboutRef}>
-      <Container className={mediaQuery && "media-query"}>
+      <Container className={mediaQuery ? "media-query" : undefined}>
         <MainCard>
           <h1>About</h1>
-          <AboutCard className={mediaQuery && "media-query"}>
+          <AboutCard className={mediaQuery ? "media-query" : undefined}>
             <AboutText>
               <p>
                 Hey! I'm Riley, I'm a web developer, cyclist and musician and I

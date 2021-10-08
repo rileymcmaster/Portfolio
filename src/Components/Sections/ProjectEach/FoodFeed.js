@@ -16,11 +16,11 @@ const FoodFeed = () => {
       <BackIcon onClick={() => history.goBack()}>
         <BsArrowLeftShort size={50} />
       </BackIcon>
-      <Wrapper className={mediaQuery && "media-query"}>
+      <Wrapper className={mediaQuery ? "media-query" : undefined}>
         <Container>
           {/* TTITLE */}
           <h1>FOOD FEED</h1>
-          <IntroSection className={mediaQuery && "media-query"}>
+          <IntroSection className={mediaQuery ? "media-query" : undefined}>
             <div>
               {/* DESCRIPTION */}
               <Section className="intro">
@@ -34,7 +34,7 @@ const FoodFeed = () => {
               </Section>
               {/* TECH USED */}
               <Section className="technologies">
-                <h3 className={mediaQuery && "media-query"}>
+                <h3 className={mediaQuery ? "media-query" : undefined}>
                   Technologies used
                 </h3>
                 <p>
@@ -98,7 +98,7 @@ const FoodFeed = () => {
           </Section>
           {/* ISSUES */}
 
-          <BottomSection className={mediaQuery && "media-query"}>
+          <BottomSection className={mediaQuery ? "media-query" : undefined}>
             <Section>
               <h3>Issues faced</h3>
               <p>

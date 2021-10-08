@@ -8,7 +8,10 @@ const Projects = ({ ProjectsRef }) => {
   let mediaQuery = useMediaQuery();
 
   return (
-    <Container className={mediaQuery && "media-query"} ref={ProjectsRef}>
+    <Container
+      className={mediaQuery ? "media-query" : undefined}
+      ref={ProjectsRef}
+    >
       <h1>PROJECTS</h1>
       <ProjectCard />
     </Container>

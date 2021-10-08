@@ -16,9 +16,9 @@ const Cyborg = () => {
       <BackIcon onClick={() => history.goBack()}>
         <BsArrowLeftShort size={50} />
       </BackIcon>
-      <Container className={mediaQuery && "media-query"}>
+      <Container className={mediaQuery ? "media-query" : undefined}>
         <h1>Cyborg Social Club</h1>
-        <IntroSection className={mediaQuery && "media-query"}>
+        <IntroSection className={mediaQuery ? "media-query" : undefined}>
           <div>
             <Section className="intro">
               {/* INTRO */}
@@ -32,7 +32,9 @@ const Cyborg = () => {
             </Section>
             {/* Technologies used */}
             <Section className="technologies">
-              <h3 className={mediaQuery && "media-query"}>Technologies used</h3>
+              <h3 className={mediaQuery ? "media-query" : undefined}>
+                Technologies used
+              </h3>
               <p>
                 React, Redux, JavaScript, Node, Express, Mongoose, MongoDB, CSS
                 & Stripe
@@ -81,7 +83,7 @@ const Cyborg = () => {
         {/* DESIGN??? */}
         {/*  */}
         {/* Issues faced */}
-        <BottomSection className={mediaQuery && "media-query"}>
+        <BottomSection className={mediaQuery ? "media-query" : undefined}>
           <Section>
             <h3>Issues faced</h3>
             <p className="indent">
@@ -97,7 +99,6 @@ const Cyborg = () => {
             alt="typeahead search function"
           />
         </BottomSection>
-        {/* <LinkToRepo> */}
         <GitHubLink>
           <a
             target="blank"
@@ -107,7 +108,6 @@ const Cyborg = () => {
             <p>Link to repo</p>
           </a>
         </GitHubLink>
-        {/* </LinkToRepo> */}
       </Container>
     </>
   );

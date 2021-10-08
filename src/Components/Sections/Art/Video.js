@@ -46,7 +46,9 @@ const Video = () => {
         </YoutubeVideo>
       ) : (
         <VideoContainer>
-          <p className={!showHoverMessage && "hide-message"}>Hover to play</p>
+          <p className={!showHoverMessage ? "hide-message" : undefined}>
+            Hover to play
+          </p>
           <video loop>
             <source
               src="https://res.cloudinary.com/bodyofwater/video/upload/v1620753680/Portolio/Video/Assembly_2_2_Loop_x264_e4p0mn.mp4"

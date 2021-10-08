@@ -34,7 +34,7 @@ const Header = ({
 
   return (
     <>
-      <Container className={mediaQuery && "media-query"}>
+      <Container className={mediaQuery ? "media-query" : undefined}>
         <button
           data-tip="Landing page"
           type="button"

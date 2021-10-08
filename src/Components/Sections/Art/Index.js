@@ -10,7 +10,7 @@ const Art = ({ ArtRef }) => {
   let mediaQuery = useMediaQuery();
 
   return (
-    <Container className={mediaQuery && "media-query"} ref={ArtRef}>
+    <Container className={mediaQuery ? "media-query" : undefined} ref={ArtRef}>
       <h1>Art</h1>
       <section>
         <h2>motion graphics & animation</h2>

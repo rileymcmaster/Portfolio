@@ -12,10 +12,13 @@ const Contact = ({ ContactRef }) => {
   let mediaQuery = useMediaQuery();
 
   return (
-    <Container className={mediaQuery && "media-query"} ref={ContactRef}>
+    <Container
+      className={mediaQuery ? "media-query" : undefined}
+      ref={ContactRef}
+    >
       <h1>CONTACT</h1>
       {/* GITHUB */}
-      <LinkContainer className={mediaQuery && "media-query"}>
+      <LinkContainer className={mediaQuery ? "media-query" : undefined}>
         <div>
           <StyledLink
             className="regular-link"
