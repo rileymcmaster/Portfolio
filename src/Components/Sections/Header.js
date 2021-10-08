@@ -81,15 +81,13 @@ const Header = ({
   );
 };
 const Container = styled.div`
-  position: fixed;
+  position: sticky;
 
   display: flex;
   flex-direction: row;
   align-items: baseline;
 
   top: 0;
-
-  width: 100vw;
   height: 3.2rem;
   padding-bottom: 0.5rem;
   padding-left: var(--page-vertical-padding);
@@ -97,7 +95,7 @@ const Container = styled.div`
 
   z-index: 99999;
   overflow: hidden;
-
+  margin: 0;
   background-color: var(--accent-bg-color);
 
   button {
@@ -134,7 +132,6 @@ const Container = styled.div`
     background-color: var(--primary-color);
     color: var(--secondary-color);
     font-size: 14px;
-    /* font-weight: 500; */
     box-shadow: 2px 2px 5px var(--third-color);
   }
 `;

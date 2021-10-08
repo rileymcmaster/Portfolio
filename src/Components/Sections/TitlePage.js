@@ -3,11 +3,11 @@ import styled from "styled-components";
 import useMediaQuery from "../Utils/useMediaQuery";
 import { useSpring, animated } from "react-spring";
 import Slide from "react-reveal/Slide";
-import prismaticBgImg from "../../assets/prismatic-lake.jpg";
+import BackgroundImage from "./BackgroundImage";
 
 const TitlePage = ({ TitlePageRef, offset }) => {
   // breakpoint is 700px
-  let mediaQuery = useMediaQuery();
+  const mediaQuery = useMediaQuery();
 
   const configTitle = { mass: 7, tension: 700, friction: 200 };
   const springPropsTitle = useSpring({
@@ -33,114 +33,106 @@ const TitlePage = ({ TitlePageRef, offset }) => {
   };
 
   return (
-    <Container
-      style={{ backgroundImage: `url(${prismaticBgImg})` }}
-      className={mediaQuery ? "media-query" : undefined}
-      ref={TitlePageRef}
-    >
-      <Slide top>
-        <Title style={springPropsTitle}>
-          {mediaQuery ? (
-            <>
-              <h1 className="first-name">Riley</h1>
-              <h1 className="last-name">McMaster</h1>
-            </>
-          ) : (
-            <>
-              <h1
-                style={{ transform: parallaxEffects.title1 }}
-                className="first-name"
-              >
-                Riley
-              </h1>
-              <h1
-                style={{ transform: parallaxEffects.title2 }}
-                className="last-name"
-              >
-                McMaster
-              </h1>{" "}
-            </>
-          )}
-        </Title>
-      </Slide>
+    <Container ref={TitlePageRef}>
+      <Title style={springPropsTitle}>
+        <h1
+          style={{
+            transform: !mediaQuery ? parallaxEffects.title1 : undefined,
+          }}
+          className="first-name"
+        >
+          Riley
+        </h1>
+        <h1
+          style={{
+            transform: !mediaQuery ? parallaxEffects.title2 : undefined,
+          }}
+          className="last-name"
+        >
+          McMaster
+        </h1>
+      </Title>
       <SkillsCardContainer style={springPropsSkillsCard}>
         <SkillsCard parallax={parallaxEffects}>
-          <Slide bottom>
-            <h2>Full-stack Web Developer</h2>
-          </Slide>
+          <h2>Full-stack</h2>
+          <h2>Web Developer</h2>
         </SkillsCard>
       </SkillsCardContainer>
+      <BackgroundImage />
     </Container>
   );
 };
 
 const Container = styled.div`
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
-  @media only screen and (max-device-width: 700px) {
-    background-attachment: scroll;
-  }
   display: flex;
   flex-direction: column;
+  align-items: center;
+  background-color: var(--accent-bg-color);
+
   min-height: 100vh;
+  padding: 3rem 0;
+  z-index: 0;
   overflow: hidden;
   position: relative;
-  background-color: var(--accent-bg-color);
-  padding: var(--page-horizontal-padding) var(--page-vertical-padding);
-  h1 {
-    color: var(--primary-color);
-    &.first-name {
-      text-shadow: 2px 0 5px rgba(0, 0, 0, 0.4), 0 -2px 15px rgba(0, 0, 0, 0.2);
-    }
-    &.last-name {
-      text-shadow: 2px -2px 5px rgba(0, 0, 0, 0.4),
-        0 -2px 15px rgba(0, 0, 0, 0.2);
-    }
-  }
-  &.media-query {
-    padding: var(--page-horizontal-padding-mobile)
-      var(--page-vertical-padding-mobile);
-    h1 {
-      &.first-name {
-        text-shadow: 2px -2px 2px rgba(0, 0, 0, 0.3),
-          0 -2px 5px rgba(0, 0, 0, 0.1);
-      }
-      &.last-name {
-        text-shadow: 2px -2px 2px rgba(0, 0, 0, 0.3),
-          0 -2px 5px rgba(0, 0, 0, 0.1);
-      }
-    }
+
+  @media (min-width: 768px) {
+    padding: 5rem 3rem;
+    align-items: flex-start;
   }
 `;
 
 const Title = styled(animated.div)`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  margin-top: 5rem;
+  position: relative;
+  z-index: 99999;
+  h1 {
+    color: var(--primary-color);
+    &.first-name {
+      text-shadow: 2px -2px 2px rgba(0, 0, 0, 0.3),
+        0 -2px 5px rgba(0, 0, 0, 0.1);
+    }
+    &.last-name {
+      text-shadow: 2px -2px 2px rgba(0, 0, 0, 0.3),
+        0 -2px 5px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      &.first-name {
+        text-shadow: 2px 0 5px rgba(0, 0, 0, 0.4),
+          0 -2px 15px rgba(0, 0, 0, 0.2);
+      }
+      &.last-name {
+        text-shadow: 2px -2px 5px rgba(0, 0, 0, 0.4),
+          0 -2px 15px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
 `;
 
 const SkillsCardContainer = styled(animated.div)`
+  position: relative;
+  z-index: 9999999;
   margin-top: auto;
+  margin-bottom: 3rem;
+  text-align: center;
 `;
 
 const SkillsCard = styled.div`
-  @media (min-width: 700px) {
-    transform: ${(props) => props.parallax.skillsCard};
-  }
-  max-width: 39rem;
-  z-index: 0;
-  color: var(--accent-bg-color);
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 1rem 0.5rem;
+
   background-color: var(--primary-color);
-  padding: 1rem;
-  margin-top: auto;
-  margin-bottom: 2rem;
+  color: var(--accent-bg-color);
   text-align: center;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4), 2px 2px 15px rgba(0, 0, 0, 0.2);
-  p {
-    margin-top: 10px;
+
+  @media (min-width: 700px) {
+    transform: ${(props) => props.parallax.skillsCard};
+    padding: 1rem;
+    flex-direction: row;
+    gap: 1rem;
   }
 `;
 
