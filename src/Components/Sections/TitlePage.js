@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import useMediaQuery from "../Utils/useMediaQuery";
 import { useSpring, animated } from "react-spring";
-import Slide from "react-reveal/Slide";
 import BackgroundImage from "./BackgroundImage";
 
 const TitlePage = ({ TitlePageRef, offset }) => {
