@@ -7,14 +7,14 @@ const projectDetails = [
     description:
       "Interactive multimedia web project combining photography, poetry, video and music.",
   },
-  //   {
-  //     title: "React Form",
-  //     link: "/project/form",
-  //     imgUrl:
-  //       "https://res.cloudinary.com/bodyofwater/image/upload/v1638914165/Portolio/Projects/React%20form/Screenshot-Mobile-2_mxcfyj.jpg",
-  //     description:
-  //       "A form built with React, making full use of controlled components and custom validation",
-  //   },
+  {
+    title: "React Form",
+    link: "/project/form",
+    imgUrl:
+      "https://res.cloudinary.com/bodyofwater/image/upload/v1638914165/Portolio/Projects/React%20form/Screenshot-Mobile-2_mxcfyj.jpg",
+    description:
+      "A form built with React, making full use of controlled components and custom validation",
+  },
   {
     title: "Food Feed",
     link: "/project/foodfeed",

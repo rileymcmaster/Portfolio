@@ -64,6 +64,12 @@ export const LinkBar = styled.div`
   justify-content: flex-start;
   gap: 1rem;
 
+  @media (max-width: 330px) {
+    flex-direction: column;
+    a h3 {
+      width: auto;
+    }
+  }
   @media (min-width: 500px) {
     gap: 2rem;
   }
@@ -78,6 +84,7 @@ export const LinkBar = styled.div`
     border-bottom: 2px solid rgba(255, 255, 255, 0.5);
     padding: 0.5rem;
     background: none;
+    white-space: nowrap;
   }
   a:hover,
   a:focus {
@@ -154,7 +161,10 @@ export const IntroSection = styled.div`
     justify-content: space-between;
     margin-right: 0;
   }
-
+  img {
+    max-width: 500px;
+    margin: 0 auto;
+  }
   @media (min-width: 800px) {
     flex-direction: row;
     div {

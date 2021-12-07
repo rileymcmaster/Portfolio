@@ -13,12 +13,11 @@ const ProjectCard = () => {
   );
 };
 const Container = styled.div`
-  /* width: 100%; */
-  max-width: 1000px;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
-
   padding: 4rem 0 0;
+
   @media (min-width: 768px) {
     flex-direction: row;
     flex-wrap: wrap;

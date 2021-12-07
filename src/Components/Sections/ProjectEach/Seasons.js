@@ -45,7 +45,7 @@ const Seasons = () => {
             </Section>
             <Section className="technologies">
               <h3>Technologies used</h3>
-              <p>React, Redux, React-Spring, intersection observer</p>
+              <p>React, Redux, React-Spring, intersection observer, Figma</p>
             </Section>
           </div>
           <img
@@ -94,7 +94,6 @@ const Seasons = () => {
             alt=""
           />
         </BottomSection>
-        {/* <img src="" alt=""/> */}
         <Section className="card standalone">
           <h3>Design</h3>
           <p>
