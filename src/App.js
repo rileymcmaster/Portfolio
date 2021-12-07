@@ -12,6 +12,7 @@ import Contact from "./Components/Sections/Contact";
 import FoodFeed from "./Components/Sections/ProjectEach/FoodFeed";
 import Cyborg from "./Components/Sections/ProjectEach/Cyborg";
 import ScrollToTop from "./Components/Utils/ScrollToTop";
+import Seasons from "./Components/Sections/ProjectEach/Seasons";
 
 const App = () => {
   const TitlePageRef = useRef(null);
@@ -53,6 +54,9 @@ const App = () => {
             </Route>
             <Route exact path="/project/cyborg">
               <Cyborg />
+            </Route>
+            <Route exact path="/project/seasons">
+              <Seasons />
             </Route>
           </Switch>
         </ScrollToTop>

@@ -151,10 +151,12 @@ const CVLink = styled(Link)`
     justify-content: center;
     border-radius: 50%;
   }
-  :hover > div > div {
+  :hover > div > div,
+  :focus > div > div {
     background-color: var(--primary-color);
   }
-  :hover > div > h2 {
+  :hover > div > h2,
+  :focus > div > h2 {
     color: var(--primary-color);
   }
 `;

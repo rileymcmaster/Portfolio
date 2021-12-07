@@ -7,7 +7,7 @@ export default createGlobalStyle`
       --third-color: #5296A5;
       --accent-bg-color: #221E22;
       --page-horizontal-padding: 20px;
-      --page-horizontal-padding-mobile: 10px;
+      --page-horizontal-padding-mobile: 1rem;
       --page-vertical-padding-mobile: 1rem;
       --page-vertical-padding: 3rem;
       --recipe-page-padding: 50px;
@@ -26,9 +26,6 @@ export default createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-
-        /* font-size: 16px; */
-        
     }
     
     html, body, div,

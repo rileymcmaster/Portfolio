@@ -14,31 +14,19 @@ const About = ({ AboutRef }) => {
           <AboutCard className={mediaQuery ? "media-query" : undefined}>
             <AboutText>
               <p>
-                Hey! I'm Riley, I'm a web developer, cyclist and musician and I
-                like to turn everything I do into an art project. By translating
-                my own experiences into something tangible, I am able to share
-                my ideas in a way that others can engage with.
+                I'm Riley, I'm a web-developer, currently working as an
+                instructor at Concordia University, among many other things
+                (cyclist, musician, vegan chef) and I am fascinated by solving
+                technical problems and seeing projects through from beginning to
+                end.
               </p>
               <p>
-                From making BMX videos with friends as a teenager, to
-                photography zines, animated music videos and documenting my{" "}
-                <a target="blank" href="https://www.instagram.com/localtarps">
-                  daily commute
-                </a>
-                , I have a way of adapting my skill set to whatever challenge I
-                want to overcome.
-              </p>
-              <p>
-                I recently moved from Vancouver to Montreal looking for a new
-                creative and technical challenge, which brought me to coding.
-                All of my experience with graphic design and the workflow and
-                intuitiveness of video editing translated instantly to building
-                websites. I had all these ideas in the back of my mind that I
-                didn't know how to execute which finally had an outlet.
-              </p>
-              <p>
-                I'm a determined problem solver with a creative eye and I love
-                collaborating and seeing projects through from idea to delivery!
+                After working in the film industry for several years, I was
+                eager to broaden my technical skills which brought me to web
+                development. I already had a keen eye for visual details,
+                experience with graphic design and the ability to quickly learn
+                new computer programs. The challenges of coding are a perfect
+                fit for my determination and creative problem-solving skills.
               </p>
             </AboutText>
           </AboutCard>
@@ -59,6 +47,7 @@ const Container = styled.div`
   h1 {
     color: var(--accent-bg-color);
     margin-top: 1rem;
+    margin-bottom: 10vh;
   }
   .profile-picture {
     object-fit: cover;
@@ -91,7 +80,7 @@ const AboutText = styled.div`
   p,
   a {
     color: white;
-    line-height: 1.5;
+    line-height: 2;
     margin-bottom: 2em;
   }
   a {
