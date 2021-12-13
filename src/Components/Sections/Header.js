@@ -132,7 +132,7 @@ const Container = styled.div`
     background-color: var(--primary-color);
     color: var(--secondary-color);
     font-size: 14px;
-    box-shadow: 2px 2px 5px var(--third-color);
+    box-shadow: 2px 2px 1px var(--third-color);
   }
 `;
 export default Header;

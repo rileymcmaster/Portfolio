@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const ProjectCardEach = ({ data }) => {
-  const { title, description, link, imgUrl } = data;
+  const { title, link, imgUrl } = data;
 
   return (
     <StyledLink tabIndex="0" to={link}>

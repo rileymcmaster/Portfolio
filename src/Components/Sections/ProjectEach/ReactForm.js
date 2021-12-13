@@ -1,13 +1,6 @@
 import React from "react";
-import styled from "styled-components";
 
-import {
-  Wrapper,
-  Section,
-  IntroSection,
-  BottomSection,
-  LinkBar,
-} from "./styledComponents";
+import { Wrapper, Section, IntroSection, LinkBar } from "./styledComponents";
 import BackBtn from "./parts/BackBtn";
 
 const ReactForm = () => {
