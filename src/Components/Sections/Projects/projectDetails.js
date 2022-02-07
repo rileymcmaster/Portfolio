@@ -16,6 +16,14 @@ const projectDetails = [
       "A form built with React, making full use of controlled components and custom validation",
   },
   {
+    title: "HandHeld.Org",
+    link: "/project/handheld",
+    imgUrl:
+      "https://res.cloudinary.com/bodyofwater/image/upload/v1644173750/Portolio/Projects/Handheld/HHorg6_ahp6da.jpg",
+    description:
+      "A minimalist home page to ease you into using the computer for the day",
+  },
+  {
     title: "Food Feed",
     link: "/project/foodfeed",
     imgUrl:

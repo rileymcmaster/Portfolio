@@ -14,6 +14,7 @@ import Cyborg from "./Components/Sections/ProjectEach/Cyborg";
 import ScrollToTop from "./Components/Utils/ScrollToTop";
 import Seasons from "./Components/Sections/ProjectEach/Seasons";
 import ReactForm from "./Components/Sections/ProjectEach/ReactForm";
+import Handheld from "./Components/Sections/ProjectEach/Handheld";
 
 const App = () => {
   const TitlePageRef = useRef(null);
@@ -24,11 +25,11 @@ const App = () => {
 
   const [offset, setOffset] = useState(0);
 
-  useEffect(() => {
-    window.onscroll = () => {
-      setOffset(window.pageYOffset);
-    };
-  }, []);
+  // useEffect(() => {
+  //   window.onscroll = () => {
+  //     setOffset(window.pageYOffset);
+  //   };
+  // }, []);
 
   return (
     <>
@@ -45,7 +46,7 @@ const App = () => {
                 ContactRef={ContactRef}
               />
               <TitlePage offset={offset} TitlePageRef={TitlePageRef} />
-              <About offset={offset} AboutRef={AboutRef} />
+              <About AboutRef={AboutRef} />
               <Projects ProjectsRef={ProjectsRef} />
               <Art ArtRef={ArtRef} />
               <Contact ContactRef={ContactRef} />
@@ -61,6 +62,9 @@ const App = () => {
             </Route>
             <Route exact path="/project/form">
               <ReactForm />
+            </Route>
+            <Route exact path="/project/handheld">
+              <Handheld />
             </Route>
           </Switch>
         </ScrollToTop>

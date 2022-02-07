@@ -45,7 +45,7 @@ const Seasons = () => {
             </Section>
             <Section className="technologies">
               <h3>Technologies used</h3>
-              <p>React, Redux, React-Spring, intersection observer, Figma</p>
+              <p>React, Redux, Figma, React-Spring, intersection observer </p>
             </Section>
           </div>
           <img

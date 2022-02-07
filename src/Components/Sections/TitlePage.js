@@ -1,58 +1,18 @@
 import React from "react";
 import styled from "styled-components";
-import useMediaQuery from "../Utils/useMediaQuery";
-import { useSpring, animated } from "react-spring";
 import BackgroundImage from "./BackgroundImage";
 
-const TitlePage = ({ TitlePageRef, offset }) => {
+const TitlePage = ({ TitlePageRef }) => {
   // breakpoint is 700px
-  const mediaQuery = useMediaQuery();
-
-  const configTitle = { mass: 7, tension: 700, friction: 200 };
-  const springPropsTitle = useSpring({
-    config: configTitle,
-    delay: 100,
-    from: { opacity: 0, y: -100 },
-    to: { opacity: 1, y: 0 },
-  });
-
-  const configSkillsCard = { mass: 7, tension: 700, friction: 200 };
-
-  const springPropsSkillsCard = useSpring({
-    config: configSkillsCard,
-    delay: 100,
-    from: { opacity: 0, y: 500 },
-    to: { opacity: 1, y: 0 },
-  });
-
-  const parallaxEffects = {
-    title1: `translateY(${Math.round(offset * 1.2)}px)`,
-    title2: `translateY(${Math.round(offset * 1.05)}px)`,
-    skillsCard: `translateY(${Math.round(offset * 1.2)}px)`,
-  };
 
   return (
     <Container ref={TitlePageRef}>
-      <Title style={springPropsTitle}>
-        <h1
-          style={{
-            transform: !mediaQuery ? parallaxEffects.title1 : undefined,
-          }}
-          className="first-name"
-        >
-          Riley
-        </h1>
-        <h1
-          style={{
-            transform: !mediaQuery ? parallaxEffects.title2 : undefined,
-          }}
-          className="last-name"
-        >
-          McMaster
-        </h1>
+      <Title>
+        <h1 className="first-name">Riley</h1>
+        <h1 className="last-name">McMaster</h1>
       </Title>
-      <SkillsCardContainer style={springPropsSkillsCard}>
-        <SkillsCard parallax={parallaxEffects}>
+      <SkillsCardContainer>
+        <SkillsCard>
           <h2>Full-stack</h2>
           <h2>Web Developer</h2>
         </SkillsCard>
@@ -80,7 +40,7 @@ const Container = styled.div`
   }
 `;
 
-const Title = styled(animated.div)`
+const Title = styled.div`
   position: relative;
   z-index: 99999;
   h1 {
@@ -109,7 +69,7 @@ const Title = styled(animated.div)`
   }
 `;
 
-const SkillsCardContainer = styled(animated.div)`
+const SkillsCardContainer = styled.div`
   position: relative;
   z-index: 9999999;
   margin-top: auto;
@@ -128,7 +88,6 @@ const SkillsCard = styled.div`
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4), 2px 2px 15px rgba(0, 0, 0, 0.2);
 
   @media (min-width: 700px) {
-    transform: ${(props) => props.parallax.skillsCard};
     padding: 1rem;
     flex-direction: row;
     gap: 1rem;

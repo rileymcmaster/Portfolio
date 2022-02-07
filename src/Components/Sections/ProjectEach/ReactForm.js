@@ -48,7 +48,7 @@ const ReactForm = () => {
         <img
           className="landscape"
           src="https://res.cloudinary.com/bodyofwater/image/upload/v1637785894/Portolio/Projects/Form/ScreenshotArtboard_1_copy_zpdxnz.jpg"
-          alt="desktop view of Food Feed"
+          alt="desktop view of React Form"
         />
         <Section className="card standalone marginTB">
           <h3>Design</h3>
